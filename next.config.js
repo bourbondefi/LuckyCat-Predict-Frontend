@@ -91,42 +91,132 @@ const config = {
     return [
       {
         source: '/send',
-        destination: '/swap',
+        destination: '/prediction',
         permanent: true,
       },
       {
         source: '/swap/:outputCurrency',
-        destination: '/swap?outputCurrency=:outputCurrency',
+        destination: '/prediction',
         permanent: true,
       },
       {
         source: '/create/:currency*',
-        destination: '/add/:currency*',
+        destination: '/prediction',
         permanent: true,
       },
       {
         source: '/farms/archived',
-        destination: '/farms/history',
+        destination: '/prediction',
         permanent: true,
       },
       {
         source: '/pool',
-        destination: '/liquidity',
+        destination: '/prediction',
         permanent: true,
       },
       {
         source: '/staking',
-        destination: '/pools',
+        destination: '/prediction',
         permanent: true,
       },
       {
         source: '/syrup',
-        destination: '/pools',
+        destination: '/prediction',
         permanent: true,
       },
       {
         source: '/collectibles',
-        destination: '/nfts',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/swap',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/liquidity',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/limit-orders',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/nfts',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/farms',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/lottery',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/pools',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/info',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/voting',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/info/pools',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/info/tokens',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/ifo',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/nfts/collection',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/nfts/activity',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/teams',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/create-profile',
+        destination: '/prediction',
+        permanent: true,
+      },
+      {
+        source: '/competition',
+        destination: '/prediction',
         permanent: true,
       },
     ]
