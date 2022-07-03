@@ -209,15 +209,7 @@ export const PricePairLabel: React.FC = () => {
   return (
     <>
       <Box pl={['20px', '20px', '20px', '40px']} position="relative" display="inline-block">
-        {!dismissTooltip && (
-          <Tooltip>
-            <Text mr="5px" display="inline-block" verticalAlign="super">
-              {t('Switch pairs here.')}
-            </Text>
-            <CloseIcon cursor="pointer" onClick={onDismissTooltip} />
-          </Tooltip>
-        )}
-        <Label dir="left" backgroundOpacity={!dismissTooltip}>
+        <Label dir="left">
           <Title bold textTransform="uppercase">
             {`${'BNB'}USD`}
           </Title>
