@@ -37,7 +37,7 @@ const initializeTradingView = (TradingViewObj: any, theme: DefaultTheme, localeC
     autosize: true,
     height: '100%',
     symbol: 'BINANCE:BNBBUSD',
-    interval: '5',
+    interval: '15',
     timezone,
     theme: theme.isDark ? 'dark' : 'light',
     style: '1',

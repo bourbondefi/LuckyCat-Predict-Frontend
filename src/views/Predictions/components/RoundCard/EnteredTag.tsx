@@ -14,7 +14,7 @@ const EnteredTag: React.FC<EnteredTagProps> = ({ amount, hasClaimed = false }) =
   const { token } = useConfig()
 
   const { targetRef, tooltipVisible, tooltip } = useTooltip(
-    <div style={{ whiteSpace: 'nowrap' }}>{`${formatBnbv2(amount)} ${token.symbol}`}</div>,
+    <div style={{ whiteSpace: 'nowrap' }}>{`${formatBnbv2(amount)} ${'BUSD'}`}</div>,
     { placement: 'bottom' },
   )
 
