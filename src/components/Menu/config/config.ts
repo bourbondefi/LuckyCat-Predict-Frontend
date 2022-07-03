@@ -23,12 +23,16 @@ export type ConfigMenuItemsType = Omit<MenuItemsType, 'items'> & { hideSubNav?: 
 
 const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType[] = (t, languageCode) => [
   {
-    label: t('Miners'),
+    label: t('Home'),
     icon: EarnIcon,
     fillIcon: EarnFillIcon,
     href: 'https://luckycat.money/',
     showItemsOnMobile: false,
     items: [
+      {
+        label: t('Main'),
+        href: 'https://luckycat.money',
+      },
       {
         label: t('BUSD'),
         href: 'https://busd.luckycat.money',
