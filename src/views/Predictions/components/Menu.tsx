@@ -74,7 +74,7 @@ const Menu = () => {
           <SetCol>
             <Flex alignItems="center" justifyContent="flex-end">
               <TimerLabelWrapper>
-                <TimerLabel interval="30" unit="m" />
+                <TimerLabel interval="12" unit="h" />
               </TimerLabelWrapper>
               <ButtonWrapper style={{ order: 4 }}>
                 <HistoryButton />
