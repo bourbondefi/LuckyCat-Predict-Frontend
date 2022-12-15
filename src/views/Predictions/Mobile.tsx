@@ -96,7 +96,7 @@ const Mobile: React.FC = () => {
       </Box>
       <MobileMenu />
       <PowerLinkStyle>
-        <Button width="100%" className="mobile-button" onClick={handleButtonClick}>
+        <Button width="75%" className="mobile-button" onClick={handleButtonClick}>
           End Round
         </Button>
       </PowerLinkStyle>
