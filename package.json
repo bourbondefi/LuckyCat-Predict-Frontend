@@ -135,5 +135,20 @@
     "ts-node": "^9.1.1",
     "turbo": "^1.1.4",
     "typechain": "^6.1.0"
-  }
+  },
+  "description": "This project contains the main features of the pancake application.",
+  "main": ".stylelintrc.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bourbondefi/LuckyCat-Predict-Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bourbondefi/LuckyCat-Predict-Frontend/issues"
+  },
+  "homepage": "https://github.com/bourbondefi/LuckyCat-Predict-Frontend#readme"
 }

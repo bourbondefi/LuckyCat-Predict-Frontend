@@ -70,13 +70,13 @@ const LiveRoundCard: React.FC<LiveRoundCardProps> = ({
     return undefined
   }, [refresh, closeTimestamp])
 
-  if (hasRoundFailed) {
-    return <CanceledRoundCard round={round} />
-  }
+  //  if (hasRoundFailed) {
+  //    return <CanceledRoundCard round={round} />
+  //  }
 
-  if (isCalculatingPhase) {
-    return <CalculatingCard round={round} hasEnteredDown={hasEnteredDown} hasEnteredUp={hasEnteredUp} />
-  }
+  //  if (isCalculatingPhase) {
+  //    return <CalculatingCard round={round} hasEnteredDown={hasEnteredDown} hasEnteredUp={hasEnteredUp} />
+  //  }
 
   return (
     <Card isActive>

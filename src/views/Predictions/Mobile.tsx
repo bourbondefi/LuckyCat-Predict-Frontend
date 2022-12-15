@@ -1,6 +1,10 @@
 import { memo } from 'react'
+import { ethers } from 'ethers'
+import { useWeb3React } from '@web3-react/core'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import predictionsAbi from 'config/abi/predictions.json'
 import styled from 'styled-components'
-import { Box, Flex } from '@pancakeswap/uikit'
+import { Box, Flex, Button } from '@pancakeswap/uikit'
 import { useGetPredictionsStatus, useIsChartPaneOpen, useIsHistoryPaneOpen } from 'state/predictions/hooks'
 import { PredictionStatus } from 'state/types'
 import MobileMenu from './components/MobileMenu'
@@ -11,6 +15,7 @@ import { ErrorNotification, PauseNotification } from './components/Notification'
 import { PageView } from './types'
 import Menu from './components/Menu'
 import LoadingSection from './components/LoadingSection'
+import { useConfig } from './context/ConfigProvider'
 
 const StyledMobile = styled.div`
   display: flex;
@@ -34,8 +39,8 @@ const View = styled.div<{ isVisible: boolean }>`
 
 const PowerLinkStyle = styled.div`
   position: absolute;
-  right: 16px;
-  bottom: 16px;
+  right: 156px;
+  top: 48px;
 `
 
 const getView = (isHistoryPaneOpen: boolean, isChartPaneOpen: boolean): PageView => {
@@ -55,9 +60,25 @@ const Mobile: React.FC = () => {
   const isChartPaneOpen = useIsChartPaneOpen()
   const view = getView(isHistoryPaneOpen, isChartPaneOpen)
   const status = useGetPredictionsStatus()
+  const { address: predictionsAddress } = useConfig()
+  const { account } = useWeb3React()
+  const { library } = useActiveWeb3React()
+
+  async function handleButtonClick() {
+    // Create an instance of the smart contract
+    const contract = new ethers.Contract(predictionsAddress, predictionsAbi, library.getSigner())
+
+    // Execute the contract's function using the default account
+    await contract.userExecuteRound().send({ from: account })
+  }
 
   return (
     <StyledMobile>
+      <PowerLinkStyle>
+        <Button width="100%" className="swiper-no-swiping" onClick={handleButtonClick}>
+          End Round
+        </Button>
+      </PowerLinkStyle>
       <Box height="100%" overflow="hidden" position="relative">
         <View isVisible={view === PageView.POSITIONS}>
           <Flex alignItems="center" height="100%">

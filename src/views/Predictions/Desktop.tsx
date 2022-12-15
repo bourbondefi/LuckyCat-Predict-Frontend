@@ -1,4 +1,8 @@
 import { memo, useEffect, useRef } from 'react'
+import { ethers } from 'ethers'
+import { useWeb3React } from '@web3-react/core'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import predictionsAbi from 'config/abi/predictions.json'
 import styled from 'styled-components'
 import Split, { SplitInstance } from 'split-grid'
 import { Button, ChartIcon, Flex, Box } from '@pancakeswap/uikit'
@@ -109,8 +113,8 @@ const Gutter = styled.div<{ isChartPaneOpen?: boolean }>`
 
 const PowerLinkStyle = styled.div`
   position: absolute;
-  right: 16px;
-  top: -40px;
+  right: 300px;
+  top: 16px;
 `
 
 const Desktop: React.FC = () => {
@@ -123,7 +127,9 @@ const Desktop: React.FC = () => {
   const dispatch = useLocalDispatch()
   const { t } = useTranslation()
   const status = useGetPredictionsStatus()
-  const { token } = useConfig()
+  const { address: predictionsAddress, token } = useConfig()
+  const { account } = useWeb3React()
+  const { library } = useActiveWeb3React()
 
   const openChartPane = () => {
     splitWrapperRef.current.style.transition = 'grid-template-rows 150ms'
@@ -187,9 +193,22 @@ const Desktop: React.FC = () => {
     }
   }, [gutterRef, chartRef, dispatch, isChartPaneOpen])
 
+  async function handleButtonClick() {
+    // Create an instance of the smart contract
+    const contract = new ethers.Contract(predictionsAddress, predictionsAbi, library.getSigner())
+
+    // Execute the contract's function using the default account
+    await contract.userExecuteRound().send({ from: account })
+  }
+
   return (
     <>
       <StyledDesktop>
+        <PowerLinkStyle>
+          <Button width="100%" className="swiper-no-swiping" onClick={handleButtonClick}>
+            End Round
+          </Button>
+        </PowerLinkStyle>
         <SplitWrapper ref={splitWrapperRef}>
           <PositionPane>
             {status === PredictionStatus.ERROR && <ErrorNotification />}
