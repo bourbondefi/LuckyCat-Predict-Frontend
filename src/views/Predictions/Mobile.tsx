@@ -39,8 +39,8 @@ const View = styled.div<{ isVisible: boolean }>`
 
 const PowerLinkStyle = styled.div`
   position: absolute;
-  right: 180px;
-  top: 48px;
+  right: 118px;
+  top: 24px;
 `
 
 const getView = (isHistoryPaneOpen: boolean, isChartPaneOpen: boolean): PageView => {
@@ -76,6 +76,11 @@ const Mobile: React.FC = () => {
     <StyledMobile>
       <Box height="100%" overflow="hidden" position="relative">
         <View isVisible={view === PageView.POSITIONS}>
+          <PowerLinkStyle>
+          <Button width="75%" className="mobile-button" onClick={handleButtonClick}>
+          End Round
+          </Button>
+          </PowerLinkStyle>
           <Flex alignItems="center" height="100%">
             {status === PredictionStatus.ERROR && <ErrorNotification />}
             {status === PredictionStatus.PAUSED && <PauseNotification />}
@@ -95,11 +100,6 @@ const Mobile: React.FC = () => {
         </View>
       </Box>
       <MobileMenu />
-      <PowerLinkStyle>
-        <Button width="100%" className="mobile-button" onClick={handleButtonClick}>
-          End Round
-        </Button>
-      </PowerLinkStyle>
     </StyledMobile>
   )
 }
