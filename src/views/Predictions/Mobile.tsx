@@ -39,7 +39,7 @@ const View = styled.div<{ isVisible: boolean }>`
 
 const PowerLinkStyle = styled.div`
   position: absolute;
-  right: 156px;
+  right: 180px;
   top: 48px;
 `
 
@@ -60,7 +60,7 @@ const Mobile: React.FC = () => {
   const isChartPaneOpen = useIsChartPaneOpen()
   const view = getView(isHistoryPaneOpen, isChartPaneOpen)
   const status = useGetPredictionsStatus()
-  const { address: predictionsAddress } = useConfig()
+  const { address: predictionsAddress, token } = useConfig()
   const { account } = useWeb3React()
   const { library } = useActiveWeb3React()
 
@@ -74,11 +74,6 @@ const Mobile: React.FC = () => {
 
   return (
     <StyledMobile>
-      <PowerLinkStyle>
-        <Button width="100%" className="swiper-no-swiping" onClick={handleButtonClick}>
-          End Round
-        </Button>
-      </PowerLinkStyle>
       <Box height="100%" overflow="hidden" position="relative">
         <View isVisible={view === PageView.POSITIONS}>
           <Flex alignItems="center" height="100%">
@@ -100,6 +95,11 @@ const Mobile: React.FC = () => {
         </View>
       </Box>
       <MobileMenu />
+      <PowerLinkStyle>
+        <Button width="100%" className="mobile-button" onClick={handleButtonClick}>
+          End Round
+        </Button>
+      </PowerLinkStyle>
     </StyledMobile>
   )
 }
