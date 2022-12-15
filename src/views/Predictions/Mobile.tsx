@@ -39,8 +39,8 @@ const View = styled.div<{ isVisible: boolean }>`
 
 const PowerLinkStyle = styled.div`
   position: absolute;
-  right: 150px;
-  top: 36px;
+  right: 128px;
+  top: 24px;
 `
 
 const getView = (isHistoryPaneOpen: boolean, isChartPaneOpen: boolean): PageView => {
