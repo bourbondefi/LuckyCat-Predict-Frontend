@@ -130,11 +130,6 @@ const config = {
         permanent: true,
       },
       {
-        source: '/',
-        destination: '/prediction',
-        permanent: true,
-      },
-      {
         source: '/limit-orders',
         destination: '/prediction',
         permanent: true,
