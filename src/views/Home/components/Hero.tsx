@@ -108,11 +108,11 @@ const Hero = () => {
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <Heading scale="xxl" color="secondary" mb="24px">
-            {t('The moon is made of pancakes.')}
+          <Heading scale="xxl" color="proimary" mb="24px">
+            {t('Swap and Bridge on the all new LuckyCat')}
           </Heading>
           <Heading scale="md" mb="24px">
-            {t('Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.')}
+            {t('Coming soon to Arbitrum.')}
           </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
@@ -129,7 +129,7 @@ const Hero = () => {
           position="relative"
         >
           <BunnyWrapper>
-            <Image src={bunnyImage} priority placeholder="blur" alt={t('Lunar bunny')} />
+            <img src="/logo.png" alt="Lucky Cat Logo" width="800px" height="600px" />
           </BunnyWrapper>
           <StarsWrapper>
             <CompositeImage {...starsImage} />

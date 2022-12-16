@@ -65,6 +65,19 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
       },
     ],
   },
+  {
+    label: t('Win'),
+    href: '/prediction',
+    icon: TrophyIcon,
+    fillIcon: TrophyFillIcon,
+    items: [
+      {
+        label: t('Prediction (BETA)'),
+        href: '/prediction',
+        image: '/images/decorations/prediction.png',
+      },
+    ],
+  },
 ]
 
 export default config
