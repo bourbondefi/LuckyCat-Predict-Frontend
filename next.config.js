@@ -96,12 +96,12 @@ const config = {
       },
       {
         source: '/swap/:outputCurrency',
-        destination: '/prediction',
+        destination: '/swap?outputCurrency=:outputCurrency',
         permanent: true,
       },
       {
         source: '/create/:currency*',
-        destination: '/prediction',
+        destination: '/add/:currency*',
         permanent: true,
       },
       {
@@ -111,7 +111,7 @@ const config = {
       },
       {
         source: '/pool',
-        destination: '/prediction',
+        destination: '/liquidity',
         permanent: true,
       },
       {
@@ -131,16 +131,6 @@ const config = {
       },
       {
         source: '/',
-        destination: '/prediction',
-        permanent: true,
-      },
-      {
-        source: '/swap',
-        destination: '/prediction',
-        permanent: true,
-      },
-      {
-        source: '/liquidity',
         destination: '/prediction',
         permanent: true,
       },

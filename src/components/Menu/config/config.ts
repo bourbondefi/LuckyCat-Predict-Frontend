@@ -47,6 +47,24 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
       },
     ],
   },
+  {
+    label: t('Trade'),
+    icon: SwapIcon,
+    fillIcon: SwapFillIcon,
+    href: '/swap',
+    showItemsOnMobile: false,
+    items: [
+      {
+        label: t('Swap'),
+        href: '/swap',
+      },
+      {
+        label: t('Bridge'),
+        href: 'https://bridge.pancakeswap.finance/',
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+    ],
+  },
 ]
 
 export default config
