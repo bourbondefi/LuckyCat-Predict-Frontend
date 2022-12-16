@@ -95,9 +95,9 @@ export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpointsContext()
-  const [isChartExpanded, setIsChartExpanded] = useState(true)
+  const [isChartExpanded, setIsChartExpanded] = useState(false)
   const [userChartPreference, setUserChartPreference] = useExchangeChartManager(isMobile)
-  const [isChartDisplayed, setIsChartDisplayed] = useState(userChartPreference)
+  const [isChartDisplayed, setIsChartDisplayed] = useState(false)
   const { refreshBlockNumber, isLoading } = useRefreshBlockNumberID()
 
   useEffect(() => {

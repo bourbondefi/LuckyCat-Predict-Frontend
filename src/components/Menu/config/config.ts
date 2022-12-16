@@ -59,6 +59,10 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
         href: '/swap',
       },
       {
+        label: t('Liquidity'),
+        href: '/liquidity',
+      },
+      {
         label: t('Bridge'),
         href: 'https://bridge.pancakeswap.finance/',
         type: DropdownMenuItemType.EXTERNAL_LINK,
