@@ -20,7 +20,7 @@ const NotFound = () => {
       <StyledNotFound>
         <Heading scale="xxl">404</Heading>
         <Text mb="16px">{t('Oops, page not found.')}</Text>
-        <Link href="/prediction" passHref>
+        <Link href="/" passHref>
           <Button as="a" scale="sm">
             {t('Back Home')}
           </Button>
