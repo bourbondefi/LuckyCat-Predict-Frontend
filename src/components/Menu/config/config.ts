@@ -27,7 +27,7 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
     icon: EarnIcon,
     fillIcon: EarnFillIcon,
     href: 'https://luckycat.money/',
-    showItemsOnMobile: false,
+    showItemsOnMobile: true,
     items: [
       {
         label: t('Main'),
