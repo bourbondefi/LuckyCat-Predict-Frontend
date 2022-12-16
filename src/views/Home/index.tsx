@@ -21,7 +21,7 @@ const StyledHeroSection = styled(PageSection)`
   padding-top: 16px;
 
   ${({ theme }) => theme.mediaQueries.md} {
-    padding-top: 12px;
+    padding-top: 48px;
   }
 `
 
