@@ -189,7 +189,7 @@ export const PancakeLabel = styled.label<PancakeToggleProps>`
   background: ${({ theme, checked }) => theme.colors[checked ? "success" : "input"]};
   box-shadow: ${({ theme }) => theme.shadows.inset};
   display: inline-block;
-  border-radius: 50px;
+  border-radius: 15px;
   position: relative;
   transition: all 0.3s ease;
   transform-origin: 20% center;

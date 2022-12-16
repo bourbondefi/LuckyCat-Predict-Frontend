@@ -40,7 +40,7 @@ export const CollectionLink = styled(NextLinkFromReactRouter)`
   margin-top: 16px;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    margin-top: 50px;
+    margin-top: 16px;
   }
 `
 
