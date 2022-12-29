@@ -150,11 +150,6 @@ const config = {
         permanent: true,
       },
       {
-        source: '/pools',
-        destination: '/prediction',
-        permanent: true,
-      },
-      {
         source: '/info',
         destination: '/prediction',
         permanent: true,

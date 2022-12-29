@@ -53,7 +53,6 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account }) => {
         ) : (
           <EarningsCell pool={pool} account={account} />
         )}
-        {pool.vaultKey ? <AutoAprCell pool={pool} /> : <AprCell pool={pool} />}
         {isLargerScreen && (
           <TotalStakedCell pool={pool} totalCakeInVault={totalCakeInVault} cakeInVaults={cakeInVaults} />
         )}

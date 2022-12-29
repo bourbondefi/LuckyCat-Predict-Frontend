@@ -34,7 +34,7 @@ const multicall = async <T = any>(abi: any[], calls: Call[]): Promise<T> => {
  * 2. The return includes a boolean whether the call was successful e.g. [wasSuccessful, callResult]
  */
 export const multicallv2 = async <T = any>(abi: any[], calls: Call[], options?: MulticallOptions): Promise<T> => {
-  const { requireSuccess = true, ...overrides } = options || {}
+  const { requireSuccess = false, ...overrides } = options || {}
   const multi = getMulticallContract()
   const itf = new Interface(abi)
 
@@ -42,7 +42,6 @@ export const multicallv2 = async <T = any>(abi: any[], calls: Call[], options?: 
     target: call.address.toLowerCase(),
     callData: itf.encodeFunctionData(call.name, call.params),
   }))
-
   const returnData = await multi.tryAggregate(requireSuccess, calldata, overrides)
   const res = returnData.map((call, i) => {
     const [result, data] = call

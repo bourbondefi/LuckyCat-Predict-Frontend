@@ -426,7 +426,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool }) => {
     <ActionContainer>
       <ActionTitles>
         <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-          {t('Stake')}{' '}
+          {t('Buy Miners')}{' '}
         </Text>
         <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
           {stakingToken.symbol}
@@ -445,7 +445,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool }) => {
             variant="secondary"
             disabled={isFinished}
           >
-            {t('Stake')}
+            {t('Buy Miners')}
           </Button>
         )}
       </ActionContent>

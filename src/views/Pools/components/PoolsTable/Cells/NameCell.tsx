@@ -43,7 +43,7 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
   const showStakedTag = vaultKey ? hasVaultShares : isStaked
 
   let title: React.ReactNode = `${t('Earn')} ${earningTokenSymbol}`
-  let subtitle: React.ReactNode = `${t('Stake')} ${stakingTokenSymbol}`
+  let subtitle: React.ReactNode = `${t('Buy Miners')} ${stakingTokenSymbol}`
   const showSubtitle = sousId !== 0 || (sousId === 0 && !isMobile)
 
   if (vaultKey) {

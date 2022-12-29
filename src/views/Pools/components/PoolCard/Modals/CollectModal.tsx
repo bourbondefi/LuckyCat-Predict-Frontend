@@ -22,7 +22,7 @@ import useCatchTxError from 'hooks/useCatchTxError'
 import { updateUserBalance, updateUserPendingReward, updateUserStakedBalance } from 'state/pools'
 import { useAppDispatch } from 'state'
 import useHarvestPool from '../../../hooks/useHarvestPool'
-import useStakePool from '../../../hooks/useStakePool'
+import useHatchPool from '../../../hooks/useHatchPool'
 
 interface CollectModalProps {
   formattedBalance: string
@@ -52,7 +52,7 @@ const CollectModal: React.FC<CollectModalProps> = ({
   const dispatch = useAppDispatch()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const { onReward } = useHarvestPool(sousId, isBnbPool)
-  const { onStake } = useStakePool(sousId, isBnbPool)
+  const { onStake } = useHatchPool(sousId, isBnbPool)
   const [shouldCompound, setShouldCompound] = useState(isCompoundPool)
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     <>

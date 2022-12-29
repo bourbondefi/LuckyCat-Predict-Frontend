@@ -1,7 +1,7 @@
 import poolsConfig from 'config/constants/pools'
-import sousChefABI from 'config/abi/sousChef.json'
+import sousChefABI from 'config/abi/sousChefV4.json'
 import erc20ABI from 'config/abi/erc20.json'
-import multicall from 'utils/multicall'
+import multicall, { multicallv2 } from 'utils/multicall'
 import { getAddress } from 'utils/addressHelpers'
 import { simpleRpcProvider } from 'utils/providers'
 import BigNumber from 'bignumber.js'
@@ -60,14 +60,14 @@ export const fetchUserBalances = async (account) => {
 export const fetchUserStakeBalances = async (account) => {
   const calls = nonMasterPools.map((p) => ({
     address: getAddress(p.contractAddress),
-    name: 'userInfo',
+    name: 'getMyMiners',
     params: [account],
   }))
   const userInfo = await multicall(sousChefABI, calls)
   return nonMasterPools.reduce(
     (acc, pool, index) => ({
       ...acc,
-      [pool.sousId]: new BigNumber(userInfo[index].amount._hex).toJSON(),
+      [pool.sousId]: new BigNumber(userInfo._hex).toJSON(),
     }),
     {},
   )
@@ -76,10 +76,10 @@ export const fetchUserStakeBalances = async (account) => {
 export const fetchUserPendingRewards = async (account) => {
   const calls = nonMasterPools.map((p) => ({
     address: getAddress(p.contractAddress),
-    name: 'pendingReward',
+    name: 'beanRewards',
     params: [account],
   }))
-  const res = await multicall(sousChefABI, calls)
+  const res = await multicallv2(sousChefABI, calls)
   return nonMasterPools.reduce(
     (acc, pool, index) => ({
       ...acc,

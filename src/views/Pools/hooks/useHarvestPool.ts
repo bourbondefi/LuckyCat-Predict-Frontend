@@ -10,12 +10,12 @@ const options = {
 
 const harvestPool = async (sousChefContract) => {
   const gasPrice = getGasPrice()
-  return sousChefContract.deposit('0', { ...options, gasPrice })
+  return sousChefContract.sellEggs({ ...options, gasPrice })
 }
 
 const harvestPoolBnb = async (sousChefContract) => {
   const gasPrice = getGasPrice()
-  return sousChefContract.deposit({ ...options, value: BIG_ZERO, gasPrice })
+  return sousChefContract.sellEggs({ ...options, gasPrice })
 }
 
 const useHarvestPool = (sousId, isUsingBnb = false) => {

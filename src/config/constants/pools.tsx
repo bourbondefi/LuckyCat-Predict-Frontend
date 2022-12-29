@@ -48,19 +48,68 @@ export const vaultPoolConfig = {
 
 const pools: SerializedPoolConfig[] = [
   {
-    sousId: 0,
-    stakingToken: serializedTokens.cake,
-    earningToken: serializedTokens.cake,
+    sousId: 1,
+    stakingToken: serializedTokens.bnb,
+    earningToken: serializedTokens.bnb,
     contractAddress: {
       97: '',
-      56: '0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652',
+      56: '0xb50e74A6b82F59c4058b5D798E3D9C9D9B8c6e16',
+    },
+    poolCategory: PoolCategory.BINANCE,
+    tokenPerBlock: '1937.62',
+    version: 4,
+  },
+  {
+    sousId: 2,
+    stakingToken: serializedTokens.busd,
+    earningToken: serializedTokens.busd,
+    contractAddress: {
+      97: '',
+      56: '0xc970E1258E896a38cc9d2E9e3104C0D34C7892d2',
     },
     poolCategory: PoolCategory.CORE,
-    tokenPerBlock: '10',
-    isFinished: false,
+    tokenPerBlock: '1937.62',
+    version: 4,
   },
-]
-  .filter((p) => !!p.contractAddress[CHAIN_ID])
-  .map((p) => ({ ...p, isFinished: true }))
+  {
+    sousId: 3,
+    stakingToken: serializedTokens.bnb,
+    earningToken: serializedTokens.bnb,
+    contractAddress: {
+      97: '',
+      56: '0xf74ebD248C34255a40A58E8cE993FB4d138BB6B1',
+    },
+    poolCategory: PoolCategory.BINANCE,
+    tokenPerBlock: '0.01331',
+    version: 4,
+  },
+  {
+    sousId: 4,
+    stakingToken: serializedTokens.dai,
+    earningToken: serializedTokens.dai,
+    contractAddress: {
+      97: '',
+      56: '0xd6fBAa7b33Ab8BE4edC14D72d76bc93cD42220b5',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.01331',
+    version: 4,
+  },
+  {
+    sousId: 5,
+    stakingToken: serializedTokens.bbnb,
+    earningToken: serializedTokens.bbnb,
+    contractAddress: {
+      97: '',
+      56: '0x53aE8D13434c8Fa5e30c0b3b73bD32DaDaD79255',
+    },
+    poolCategory: PoolCategory.BINANCE,
+    tokenPerBlock: '0.01331',
+    version: 4,
+  },
+].filter((p) => !!p.contractAddress[CHAIN_ID])
 
-export default [...pools]
+// known finished pools
+const finishedPools = [].filter((p) => !!p.contractAddress[CHAIN_ID]).map((p) => ({ ...p, isFinished: true }))
+
+export default [...pools, ...finishedPools]

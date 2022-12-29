@@ -10,7 +10,7 @@ import chunk from 'lodash/chunk'
 import sousChefV2 from '../../config/abi/sousChefV2.json'
 import sousChefV3 from '../../config/abi/sousChefV3.json'
 
-const poolsWithEnd = poolsConfig.filter((p) => p.sousId !== 0)
+const poolsWithEnd = poolsConfig.filter((p) => p.sousId > 6)
 
 const startEndBlockCalls = poolsWithEnd.flatMap((poolConfig) => {
   return [
@@ -53,14 +53,13 @@ export const fetchPoolsBlockLimits = async () => {
 
 const poolsBalanceOf = poolsConfig.map((poolConfig) => {
   return {
-    address: poolConfig.stakingToken.address,
-    name: 'balanceOf',
-    params: [getAddress(poolConfig.contractAddress)],
+    address: getAddress(poolConfig.contractAddress),
+    name: 'getBalance',
   }
 })
 
 export const fetchPoolsTotalStaking = async () => {
-  const poolsTotalStaked = await multicall(erc20ABI, poolsBalanceOf)
+  const poolsTotalStaked = await multicall(sousChefABI, poolsBalanceOf)
 
   return poolsConfig.map((p, index) => ({
     sousId: p.sousId,

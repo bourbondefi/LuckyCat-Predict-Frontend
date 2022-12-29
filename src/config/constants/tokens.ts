@@ -22,6 +22,14 @@ export const mainnetTokens = defineTokens({
   ),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
+  bbnb: new Token(
+    MAINNET,
+    '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    18,
+    'BNB',
+    'BNB',
+    'https://beanmachine.finance/',
+  ),
   cake: new Token(
     MAINNET,
     '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
@@ -77,9 +85,9 @@ export const mainnetTokens = defineTokens({
   ),
   dai: new Token(
     MAINNET,
-    '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
+    '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
     18,
-    'DAI',
+    'CAKE',
     'Dai Stablecoin',
     'https://www.makerdao.com/',
   ),
