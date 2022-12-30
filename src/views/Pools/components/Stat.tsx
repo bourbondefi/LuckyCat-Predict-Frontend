@@ -122,8 +122,7 @@ export const AprInfo: FC<{ pool: DeserializedPool; stakedBalance: BigNumber }> =
   const { t } = useTranslation()
   return (
     <Flex justifyContent="space-between" alignItems="center">
-      <Text small>{t('APR')}:</Text>
-      <Apr pool={pool} showIcon stakedBalance={stakedBalance} performanceFee={0} fontSize="14px" />
+      <Text small>{t('Info')}:</Text>
     </Flex>
   )
 }

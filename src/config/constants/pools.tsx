@@ -56,7 +56,7 @@ const pools: SerializedPoolConfig[] = [
       56: '0xb50e74A6b82F59c4058b5D798E3D9C9D9B8c6e16',
     },
     poolCategory: PoolCategory.BINANCE,
-    tokenPerBlock: '1937.62',
+    tokenPerBlock: '0.000008',
     version: 4,
   },
   {
@@ -68,19 +68,7 @@ const pools: SerializedPoolConfig[] = [
       56: '0xc970E1258E896a38cc9d2E9e3104C0D34C7892d2',
     },
     poolCategory: PoolCategory.CORE,
-    tokenPerBlock: '1937.62',
-    version: 4,
-  },
-  {
-    sousId: 3,
-    stakingToken: serializedTokens.bnb,
-    earningToken: serializedTokens.bnb,
-    contractAddress: {
-      97: '',
-      56: '0xf74ebD248C34255a40A58E8cE993FB4d138BB6B1',
-    },
-    poolCategory: PoolCategory.BINANCE,
-    tokenPerBlock: '0.01331',
+    tokenPerBlock: '0.000008',
     version: 4,
   },
   {
@@ -92,7 +80,7 @@ const pools: SerializedPoolConfig[] = [
       56: '0xd6fBAa7b33Ab8BE4edC14D72d76bc93cD42220b5',
     },
     poolCategory: PoolCategory.CORE,
-    tokenPerBlock: '0.01331',
+    tokenPerBlock: '0.000008',
     version: 4,
   },
   {
@@ -104,12 +92,40 @@ const pools: SerializedPoolConfig[] = [
       56: '0x53aE8D13434c8Fa5e30c0b3b73bD32DaDaD79255',
     },
     poolCategory: PoolCategory.BINANCE,
-    tokenPerBlock: '0.01331',
+    tokenPerBlock: '0.000008',
+    version: 4,
+  },
+  {
+    sousId: 6,
+    stakingToken: serializedTokens.usdt,
+    earningToken: serializedTokens.usdt,
+    contractAddress: {
+      97: '',
+      56: '0x27D25D982bd3eD23ade952cE1b9AF9dcb6147171',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.000003',
     version: 4,
   },
 ].filter((p) => !!p.contractAddress[CHAIN_ID])
 
 // known finished pools
-const finishedPools = [].filter((p) => !!p.contractAddress[CHAIN_ID]).map((p) => ({ ...p, isFinished: true }))
+const finishedPools = [
+  {
+    isFinished: true,
+    sousId: 3,
+    stakingToken: serializedTokens.bnb,
+    earningToken: serializedTokens.bnb,
+    contractAddress: {
+      97: '',
+      56: '0xf74ebD248C34255a40A58E8cE993FB4d138BB6B1',
+    },
+    poolCategory: PoolCategory.BINANCE,
+    tokenPerBlock: '0.01331',
+    version: 4,
+  },
+]
+  .filter((p) => !!p.contractAddress[CHAIN_ID])
+  .map((p) => ({ ...p, isFinished: true }))
 
 export default [...pools, ...finishedPools]
