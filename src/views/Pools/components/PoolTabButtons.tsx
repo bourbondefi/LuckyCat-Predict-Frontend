@@ -82,7 +82,12 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
     </ToggleWrapper>
   )
 
-  return <ViewControls>{viewModeToggle}</ViewControls>
+  return (
+    <ViewControls>
+      {viewModeToggle}
+      {liveOrFinishedSwitch}
+    </ViewControls>
+  )
 }
 
 export default PoolTabButtons

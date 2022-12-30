@@ -48,6 +48,7 @@ export const vaultPoolConfig = {
 
 const pools: SerializedPoolConfig[] = [
   {
+    title: 'Lucky Cat',
     sousId: 1,
     stakingToken: serializedTokens.bnb,
     earningToken: serializedTokens.bnb,
@@ -60,6 +61,7 @@ const pools: SerializedPoolConfig[] = [
     version: 4,
   },
   {
+    title: 'LuckyCat',
     sousId: 2,
     stakingToken: serializedTokens.busd,
     earningToken: serializedTokens.busd,
@@ -72,6 +74,7 @@ const pools: SerializedPoolConfig[] = [
     version: 4,
   },
   {
+    title: 'Lucky Cat',
     sousId: 4,
     stakingToken: serializedTokens.dai,
     earningToken: serializedTokens.dai,
@@ -84,6 +87,7 @@ const pools: SerializedPoolConfig[] = [
     version: 4,
   },
   {
+    title: 'Bean Machine',
     sousId: 5,
     stakingToken: serializedTokens.bbnb,
     earningToken: serializedTokens.bbnb,
@@ -96,6 +100,7 @@ const pools: SerializedPoolConfig[] = [
     version: 4,
   },
   {
+    title: 'Trust Miner',
     sousId: 6,
     stakingToken: serializedTokens.usdt,
     earningToken: serializedTokens.usdt,
@@ -112,6 +117,7 @@ const pools: SerializedPoolConfig[] = [
 // known finished pools
 const finishedPools = [
   {
+    title: 'Platinum BNB',
     isFinished: true,
     sousId: 3,
     stakingToken: serializedTokens.bnb,

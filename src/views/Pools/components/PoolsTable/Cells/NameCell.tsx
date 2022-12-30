@@ -28,7 +28,7 @@ const StyledCell = styled(BaseCell)`
 const NameCell: React.FC<NameCellProps> = ({ pool }) => {
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpointsContext()
-  const { sousId, stakingToken, earningToken, userData, isFinished, vaultKey } = pool
+  const { title, sousId, stakingToken, earningToken, userData, isFinished, vaultKey } = pool
   const {
     userData: { userShares, lockEndTime, locked },
   } = useVaultPoolByKey(pool.vaultKey)
@@ -42,12 +42,12 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
 
   const showStakedTag = vaultKey ? hasVaultShares : isStaked
 
-  let title: React.ReactNode = `${t('Earn')} ${earningTokenSymbol}`
+  let title2: React.ReactNode = `${title}`
   let subtitle: React.ReactNode = `${t('Buy Miners')} ${stakingTokenSymbol}`
   const showSubtitle = sousId !== 0 || (sousId === 0 && !isMobile)
 
   if (vaultKey) {
-    title = vaultPoolConfig[vaultKey].name
+    title2 = vaultPoolConfig[vaultKey].name
     subtitle = vaultPoolConfig[vaultKey].description
   }
 
@@ -68,7 +68,7 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
             </Text>
           ))}
         <Text bold={!isMobile} small={isMobile}>
-          {title}
+          {title2}
         </Text>
         {showSubtitle && (
           <Text fontSize="12px" color="textSubtle">
