@@ -268,18 +268,6 @@ const Pools: React.FC = () => {
             <Heading scale="md" color="text">
               Your Referral Link:
             </Heading>
-            <Text fontSize="12px" bold color="red">
-              https://luckycat.money/pools?ref={account}
-              <CopyButton
-                width="16px"
-                buttonColor="textSubtle"
-                text={`https://luckycat.money/pools?ref=${account}`}
-                tooltipMessage={t('Copied!')}
-                tooltipTop={20}
-                tooltipRight={0}
-                tooltipFontSize={12}
-              />
-            </Text>
           </Flex>
         </Flex>
       </PageHeader>
@@ -332,6 +320,18 @@ const Pools: React.FC = () => {
               <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />
             </LabelWrapper>
           </FilterContainer>
+          <Text fontSize="12px" bold color="red">
+            https://luckycat.money/pools?ref={account}
+            <CopyButton
+              width="16px"
+              buttonColor="textSubtle"
+              text={`https://luckycat.money/pools?ref=${account}`}
+              tooltipMessage={t('Copied!')}
+              tooltipTop={120}
+              tooltipRight={200}
+              tooltipFontSize={24}
+            />
+          </Text>
         </PoolControls>
         {showFinishedPools}
         {account && !userDataLoaded && stakedOnly && (
