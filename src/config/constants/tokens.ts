@@ -89,7 +89,7 @@ export const mainnetTokens = defineTokens({
     18,
     'CAKE',
     'Dai Stablecoin',
-    'https://www.makerdao.com/',
+    'https://pancakeswap.finance/',
   ),
   usdt: new Token(
     MAINNET,
