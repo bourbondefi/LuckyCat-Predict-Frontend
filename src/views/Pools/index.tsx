@@ -265,9 +265,6 @@ const Pools: React.FC = () => {
             <Heading scale="md" color="text">
               {t('High APR, High risk.')}
             </Heading>
-            <Heading scale="md" color="text">
-              Your Referral Link:
-            </Heading>
           </Flex>
         </Flex>
       </PageHeader>
@@ -320,8 +317,8 @@ const Pools: React.FC = () => {
               <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />
             </LabelWrapper>
           </FilterContainer>
-          <Text fontSize="12px" bold color="red">
-            https://luckycat.money/pools?ref={account}
+          <Text fontSize="12px" color="red">
+            Ref link: https://luckycat.money/pools?ref={account}
             <CopyButton
               width="16px"
               buttonColor="textSubtle"
