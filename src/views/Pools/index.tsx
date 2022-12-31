@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { CopyButton } from 'components/CopyButton'
 import styled from 'styled-components'
 import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
 import { formatUnits } from '@ethersproject/units'
@@ -264,6 +265,21 @@ const Pools: React.FC = () => {
             <Heading scale="md" color="text">
               {t('High APR, High risk.')}
             </Heading>
+            <Heading scale="md" color="text">
+              Your Referral Link:
+            </Heading>
+            <Text fontSize="12px" bold color="red">
+              https://luckycat.money/pools?ref={account}
+              <CopyButton
+                width="16px"
+                buttonColor="textSubtle"
+                text={`https://luckycat.money/pools?ref=${account}`}
+                tooltipMessage={t('Copied!')}
+                tooltipTop={20}
+                tooltipRight={0}
+                tooltipFontSize={12}
+              />
+            </Text>
           </Flex>
         </Flex>
       </PageHeader>
