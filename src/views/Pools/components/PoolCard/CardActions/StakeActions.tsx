@@ -14,6 +14,7 @@ interface StakeActionsProps {
   isBnbPool: boolean
   isStaked: ConstrainBoolean
   isLoading?: boolean
+  isStarted?: boolean
 }
 
 const StakeAction: React.FC<StakeActionsProps> = ({
@@ -24,7 +25,7 @@ const StakeAction: React.FC<StakeActionsProps> = ({
   isStaked,
   isLoading = false,
 }) => {
-  const { stakingToken, stakingTokenPrice, stakingLimit, isFinished, userData } = pool
+  const { isStarted, stakingToken, stakingTokenPrice, stakingLimit, isFinished, userData } = pool
   const { t } = useTranslation()
   const stakedTokenBalance = getBalanceNumber(stakedBalance, stakingToken.decimals)
   const stakedTokenDollarBalance = getBalanceNumber(
@@ -94,7 +95,6 @@ const StakeAction: React.FC<StakeActionsProps> = ({
             <IconButton
               variant="secondary"
               onClick={stakingTokenBalance.gt(0) ? onPresentStake : onPresentTokenRequired}
-              disabled={isFinished}
             >
               <AddIcon color="primary" width="24px" height="24px" />
             </IconButton>
@@ -103,7 +103,7 @@ const StakeAction: React.FC<StakeActionsProps> = ({
         {tooltipVisible && tooltip}
       </Flex>
     ) : (
-      <Button disabled={isFinished} onClick={stakingTokenBalance.gt(0) ? onPresentStake : onPresentTokenRequired}>
+      <Button disabled={!isStarted} onClick={stakingTokenBalance.gt(0) ? onPresentStake : onPresentTokenRequired}>
         {t('Buy Miners')}
       </Button>
     )

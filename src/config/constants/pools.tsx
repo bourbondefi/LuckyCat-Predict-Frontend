@@ -48,6 +48,20 @@ export const vaultPoolConfig = {
 
 const pools: SerializedPoolConfig[] = [
   {
+    title: 'Lucky Cat V2',
+    sousId: 7,
+    stakingToken: serializedTokens.bnb,
+    earningToken: serializedTokens.bnb,
+    contractAddress: {
+      97: '',
+      56: '0x3c2bdcf10640d8efed96c943dd5c231118ca2248',
+    },
+    poolCategory: PoolCategory.BINANCE,
+    tokenPerBlock: '0.000008',
+    version: 4,
+    isStarted: false,
+  },
+  {
     title: 'Lucky Cat',
     sousId: 1,
     stakingToken: serializedTokens.bnb,
@@ -59,6 +73,8 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.BINANCE,
     tokenPerBlock: '0.000008',
     version: 4,
+    isFinished: true,
+    isStarted: true,
   },
   {
     title: 'LuckyCat',
@@ -72,6 +88,8 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '0.000008',
     version: 4,
+    isFinished: true,
+    isStarted: true,
   },
   {
     title: 'Lucky Cat',
@@ -85,6 +103,8 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '0.000008',
     version: 4,
+    isFinished: true,
+    isStarted: true,
   },
   {
     title: 'Bean Machine',
@@ -98,6 +118,8 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.BINANCE,
     tokenPerBlock: '0.000008',
     version: 4,
+    isFinished: true,
+    isStarted: true,
   },
   {
     title: 'Trust Miner',
@@ -111,6 +133,8 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '0.000003',
     version: 4,
+    isFinished: true,
+    isStarted: true,
   },
 ].filter((p) => !!p.contractAddress[CHAIN_ID])
 
@@ -127,8 +151,54 @@ const finishedPools = [
       56: '0xf74ebD248C34255a40A58E8cE993FB4d138BB6B1',
     },
     poolCategory: PoolCategory.BINANCE,
-    tokenPerBlock: '0.01331',
+    tokenPerBlock: '0.000008',
     version: 4,
+    isStarted: true,
+  },
+  {
+    title: 'Platinum BUSD',
+    isFinished: true,
+    sousId: 8,
+    stakingToken: serializedTokens.busd,
+    earningToken: serializedTokens.busd,
+    contractAddress: {
+      97: '',
+      56: '0x707F5aeefCf380F682F3B88c7dA245073e76E14E',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.000008',
+    version: 4,
+    isStarted: true,
+  },
+  {
+    title: 'Lucky Cat Shib',
+    isFinished: true,
+    sousId: 9,
+    stakingToken: serializedTokens.shib,
+    earningToken: serializedTokens.shib,
+    contractAddress: {
+      97: '',
+      56: '0x6C83AF6DFFAB3204C485334E4b904679c87D5e84',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.000008',
+    version: 4,
+    isStarted: true,
+  },
+  {
+    title: 'Lucky Cat ETH',
+    isFinished: true,
+    sousId: 10,
+    stakingToken: serializedTokens.eth,
+    earningToken: serializedTokens.eth,
+    contractAddress: {
+      97: '',
+      56: '0xb3a6a7faBE117b83eEeF74110719be09949bBC78',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.000008',
+    version: 4,
+    isStarted: true,
   },
 ]
   .filter((p) => !!p.contractAddress[CHAIN_ID])

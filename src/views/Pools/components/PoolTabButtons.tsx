@@ -64,11 +64,11 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
     <Wrapper>
       <ButtonMenu activeIndex={isExact ? 0 : 1} scale="sm" variant="subtle">
         <ButtonMenuItem as={NextLinkFromReactRouter} to="/pools" replace>
-          {t('Live')}
+          {t('New')}
         </ButtonMenuItem>
         <NotificationDot show={hasStakeInFinishedPools}>
           <ButtonMenuItem id="finished-pools-button" as={NextLinkFromReactRouter} to="/pools/history" replace>
-            {t('Finished')}
+            {t('Old')}
           </ButtonMenuItem>
         </NotificationDot>
       </ButtonMenu>

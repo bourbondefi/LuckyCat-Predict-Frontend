@@ -59,6 +59,15 @@ export const mainnetTokens = defineTokens({
   ),
   pros: new Token(MAINNET, '0xEd8c8Aa8299C10f067496BB66f8cC7Fb338A3405', 18, 'PROS', 'Prosper', 'https://prosper.so/'),
   qbt: new Token(MAINNET, '0x17B7163cf1Dbd286E262ddc68b553D899B93f526', 18, 'QBT', 'Qubit Token', 'https://qbt.fi/'),
+  shib: new Token(
+    MAINNET,
+    '0x2859e4544C4bB03966803b044A93563Bd2D0DD4D',
+    18,
+    'SHIB',
+    'Shiba Token',
+    'https://shibatoken.com/',
+  ),
+
   cvp: new Token(
     MAINNET,
     '0x5Ec3AdBDae549Dce842e24480Eb2434769e22B2E',

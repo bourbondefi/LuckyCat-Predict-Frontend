@@ -23,7 +23,7 @@ const PoolCard: React.FC<{ pool: DeserializedPool; account: string }> = ({ pool,
   return (
     <StyledCard
       isFinished={isFinished && sousId !== 0}
-      ribbon={isFinished && <CardRibbon variantColor="textDisabled" text={t('Finished')} />}
+      // ribbon={isFinished && <CardRibbon variantColor="textDisabled" text={t('Finished')} />}
     >
       <PoolCardHeader isStaking={accountHasStakedBalance} isFinished={isFinished && sousId !== 0}>
         <PoolCardHeaderTitle
