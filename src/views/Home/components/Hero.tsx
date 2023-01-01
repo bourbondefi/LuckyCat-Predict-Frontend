@@ -111,9 +111,6 @@ const Hero = () => {
           <Heading scale="xxl" color="proimary" mb="24px">
             {t('Swap and Bridge on the all new LuckyCat')}
           </Heading>
-          <Heading scale="md" mb="24px">
-            {t('Coming soon to Arbitrum.')}
-          </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
             <NextLinkFromReactRouter to="/swap">
