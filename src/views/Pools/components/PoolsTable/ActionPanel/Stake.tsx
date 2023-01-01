@@ -65,6 +65,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool }) => {
     vaultKey,
     profileRequirement,
     userDataLoaded,
+    isStarted,
   } = pool
   const { t } = useTranslation()
   const { account } = useWeb3React()
@@ -443,6 +444,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool }) => {
             width="100%"
             onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
             variant="secondary"
+            disabled={!isStarted}
           >
             {t('Buy Miners')}
           </Button>
