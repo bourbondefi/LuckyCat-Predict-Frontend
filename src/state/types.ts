@@ -131,6 +131,7 @@ interface CorePoolProps {
 }
 
 export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps {
+  rate?: string
   isStarted?: boolean
   title?: string
   totalStaked?: BigNumber

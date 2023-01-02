@@ -31,6 +31,7 @@ const PoolStatsInfo: React.FC<ExpandedFooterProps> = ({
   const currentBlock = useCurrentBlock()
 
   const {
+    rate,
     stakingToken,
     earningToken,
     totalStaked,
@@ -111,6 +112,12 @@ const PoolStatsInfo: React.FC<ExpandedFooterProps> = ({
           )}
         </Flex>
       )}
+      {vaultKey && <PerformanceFee userData={userData} performanceFeeAsDecimal={performanceFeeAsDecimal} />}
+      <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
+        <Text small color="red">
+          APR: {rate} / PER DAY
+        </Text>
+      </Flex>
       {vaultKey && <PerformanceFee userData={userData} performanceFeeAsDecimal={performanceFeeAsDecimal} />}
       <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
         <LinkExternal href={`/info/token/${earningToken.address}`} bold={false} small>

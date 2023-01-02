@@ -4,8 +4,7 @@ import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
   title: 'Lucky Cat',
-  description:
-    'Lucky Cat has the highest rewards and lowest fees. Play Prediction to win BUSD!',
+  description: 'Lucky Cat has the highest rewards and lowest fees. Play Prediction to win BUSD!',
   image: 'https://predict.luckycat.money/images/FullLogo.png',
 }
 
@@ -28,7 +27,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/prediction/leaderboard': { title: t('Leaderboard') },
       '/farms': { title: t('Farms') },
       '/farms/auction': { title: t('Farm Auctions') },
-      '/pools': { title: t('Pools') },
+      '/pools': { title: t('Miners') },
       '/lottery': { title: t('Lottery') },
       '/ifo': { title: t('Initial Farm Offering') },
       '/teams': { basePath: true, title: t('Leaderboard') },

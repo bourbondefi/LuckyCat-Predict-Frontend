@@ -30,7 +30,7 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
     showItemsOnMobile: true,
     items: [
       {
-        label: t('Pools'),
+        label: t('Miners'),
         href: '/pools',
       },
     ],

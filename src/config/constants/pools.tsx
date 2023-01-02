@@ -49,6 +49,7 @@ export const vaultPoolConfig = {
 const pools: SerializedPoolConfig[] = [
   {
     title: 'Lucky Cat V2',
+    rate: '3%',
     sousId: 7,
     stakingToken: serializedTokens.bnb,
     earningToken: serializedTokens.bnb,

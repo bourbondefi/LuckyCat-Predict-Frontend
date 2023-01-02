@@ -27,7 +27,7 @@ const PoolsTable: React.FC<PoolsTableProps> = ({ pools, userDataReady, account }
 
   return (
     <Container>
-      <TableHeader title={t('Pools')} />
+      <TableHeader title={t('Miners')} />
       <TableStyle>
         {!userDataReady && (
           <Flex padding="50px 10px" justifyContent="center">
