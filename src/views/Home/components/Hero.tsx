@@ -1,4 +1,4 @@
-import { Button, Flex, Heading } from '@pancakeswap/uikit'
+import { Button, Flex, Heading, LinkExternal } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { NextLinkFromReactRouter } from 'components/NextLink'
@@ -113,9 +113,9 @@ const Hero = () => {
           </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
-            <NextLinkFromReactRouter to="/pools">
+            <LinkExternal href="https://v2.luckycat.money/">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Earn Now')}</Button>
-            </NextLinkFromReactRouter>
+            </LinkExternal>
           </Flex>
         </Flex>
         <Flex

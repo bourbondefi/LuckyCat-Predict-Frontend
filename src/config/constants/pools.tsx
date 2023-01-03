@@ -74,7 +74,6 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.BINANCE,
     tokenPerBlock: '0.000008',
     version: 4,
-    isFinished: true,
     isStarted: true,
   },
   {
@@ -89,7 +88,6 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '0.000008',
     version: 4,
-    isFinished: true,
     isStarted: true,
   },
   {
@@ -104,7 +102,6 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '0.000008',
     version: 4,
-    isFinished: true,
     isStarted: true,
   },
   {
@@ -119,7 +116,6 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.BINANCE,
     tokenPerBlock: '0.000008',
     version: 4,
-    isFinished: true,
     isStarted: true,
   },
   {
@@ -134,7 +130,6 @@ const pools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '0.000003',
     version: 4,
-    isFinished: true,
     isStarted: true,
   },
 ].filter((p) => !!p.contractAddress[CHAIN_ID])
