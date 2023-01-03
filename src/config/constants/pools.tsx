@@ -63,6 +63,20 @@ const pools: SerializedPoolConfig[] = [
     isStarted: false,
   },
   {
+    title: 'Ore Miner',
+    sousId: 11,
+    stakingToken: serializedTokens.bnb,
+    earningToken: serializedTokens.bnb,
+    contractAddress: {
+      97: '',
+      56: '0xE7bF339672336c9ba650b0bc8E16d1662429F4bA',
+    },
+    poolCategory: PoolCategory.BINANCE,
+    tokenPerBlock: '0.000008',
+    version: 4,
+    isStarted: true,
+  },
+  {
     title: 'Lucky Cat',
     sousId: 1,
     stakingToken: serializedTokens.bnb,
