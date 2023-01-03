@@ -1,5 +1,6 @@
 import poolsConfig from 'config/constants/pools'
 import sousChefABI from 'config/abi/sousChefV4.json'
+import luckyCatABI from 'config/abi/luckycatv2.json'
 import erc20ABI from 'config/abi/erc20.json'
 import multicall, { multicallv2 } from 'utils/multicall'
 import { getAddress } from 'utils/addressHelpers'
@@ -12,6 +13,7 @@ import uniq from 'lodash/uniq'
 const nonBnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol !== 'BNB')
 const bnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol === 'BNB')
 const nonMasterPools = poolsConfig.filter((pool) => pool.sousId !== 0)
+const luckycatv2Pools = poolsConfig.filter((pool) => pool.sousId === 7)
 
 export const fetchPoolsAllowance = async (account) => {
   const calls = nonBnbPools.map((pool) => ({
@@ -80,6 +82,38 @@ export const fetchUserPendingRewards = async (account) => {
     params: [account],
   }))
   const res = await multicallv2(sousChefABI, calls)
+  return nonMasterPools.reduce(
+    (acc, pool, index) => ({
+      ...acc,
+      [pool.sousId]: new BigNumber(res[index]).toJSON(),
+    }),
+    {},
+  )
+}
+
+export const fetchUserCanWithdraw = async (account) => {
+  const calls = luckycatv2Pools.map((p) => ({
+    address: getAddress(p.contractAddress),
+    name: 'canUserWithdraw',
+    params: [account],
+  }))
+  const res = await multicallv2(luckyCatABI, calls)
+  return nonMasterPools.reduce(
+    (acc, pool, index) => ({
+      ...acc,
+      [pool.sousId]: new BigNumber(res[index]).toJSON(),
+    }),
+    {},
+  )
+}
+
+export const fetchUserWithdrawAmount = async (account) => {
+  const calls = luckycatv2Pools.map((p) => ({
+    address: getAddress(p.contractAddress),
+    name: 'getWithdrawableAmount',
+    params: [account],
+  }))
+  const res = await multicallv2(luckyCatABI, calls)
   return nonMasterPools.reduce(
     (acc, pool, index) => ({
       ...acc,

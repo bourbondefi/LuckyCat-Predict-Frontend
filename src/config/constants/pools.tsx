@@ -55,7 +55,7 @@ const pools: SerializedPoolConfig[] = [
     earningToken: serializedTokens.bnb,
     contractAddress: {
       97: '',
-      56: '0x3c2bdcf10640d8efed96c943dd5c231118ca2248',
+      56: '0x88E3E9a256E573A124fe230Cf30853B129B1F4f8',
     },
     poolCategory: PoolCategory.BINANCE,
     tokenPerBlock: '0.000008',

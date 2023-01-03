@@ -24,6 +24,14 @@ const sousStakeBnb = async (sousChefContract, amount, ref) => {
   })
 }
 
+const sousStakeV2 = async (sousChefContract, amount, ref) => {
+  const gasPrice = getGasPrice()
+  return sousChefContract.hatchEggs({
+    ...options,
+    gasPrice,
+  })
+}
+
 const useHatchPool = (sousId: number, isUsingBnb = false) => {
   const { query } = useRouter()
   let { ref } = query
