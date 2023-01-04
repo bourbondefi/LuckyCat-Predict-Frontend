@@ -109,7 +109,7 @@ const Hero = () => {
       >
         <Flex flex="1" flexDirection="column">
           <Heading scale="xxl" color="proimary" mb="24px">
-            {t('Swap and Bridge on the all new LuckyCat')}
+            {t('Earn, Swap, and Bridge on the all new LuckyCat')}
           </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
