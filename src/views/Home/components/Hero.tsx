@@ -113,9 +113,9 @@ const Hero = () => {
           </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
-            <LinkExternal href="https://v2.luckycat.money/">
+            <NextLinkFromReactRouter href="/pools">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Earn Now')}</Button>
-            </LinkExternal>
+            </NextLinkFromReactRouter>
           </Flex>
         </Flex>
         <Flex

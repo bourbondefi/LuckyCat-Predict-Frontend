@@ -70,19 +70,6 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
       },
     ],
   },
-  {
-    label: t(''),
-    icon: MoreIcon,
-    href: '/info',
-    showItemsOnMobile: true,
-    items: [
-      {
-        label: t('LitePaper'),
-        href: 'https://telegra.ph/Lucky-Cat-V2-Litepaper-01-02',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-    ],
-  },
 ]
 
 export default config

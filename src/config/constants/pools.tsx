@@ -48,21 +48,6 @@ export const vaultPoolConfig = {
 
 const pools: SerializedPoolConfig[] = [
   {
-    title: 'Lucky Cat V2',
-    rate: '3%',
-    sousId: 7,
-    stakingToken: serializedTokens.bnb,
-    earningToken: serializedTokens.bnb,
-    contractAddress: {
-      97: '',
-      56: '0x88E3E9a256E573A124fe230Cf30853B129B1F4f8',
-    },
-    poolCategory: PoolCategory.BINANCE,
-    tokenPerBlock: '0.000008',
-    version: 4,
-    isStarted: false,
-  },
-  {
     title: 'Ore Miner',
     sousId: 11,
     stakingToken: serializedTokens.bnb,
