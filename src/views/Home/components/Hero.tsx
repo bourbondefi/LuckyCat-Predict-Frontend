@@ -113,7 +113,7 @@ const Hero = () => {
           </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
-            <NextLinkFromReactRouter href="/pools">
+            <NextLinkFromReactRouter to="/pools">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Earn Now')}</Button>
             </NextLinkFromReactRouter>
           </Flex>
