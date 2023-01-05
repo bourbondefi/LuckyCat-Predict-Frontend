@@ -141,7 +141,14 @@ export const getIfoV2Contract = (address: string, signer?: Signer | Provider) =>
 }
 export const getSouschefContract = (id: number, signer?: Signer | Provider) => {
   const config = poolsConfig.find((pool) => pool.sousId === id)
-  const abi = config.poolCategory === PoolCategory.BINANCE ? sousChefBnb : sousChef
+  let abi
+  if (config.poolCategory === PoolCategory.BINANCE && id !== 7) {
+    abi = sousChefBnb
+  } else if (id === 7) {
+    abi = luckycatv2
+  } else {
+    abi = sousChef
+  }
   return getContract(abi, getAddress(config.contractAddress), signer) as SousChef
 }
 export const getSouschefV2Contract = (id: number, signer?: Signer | Provider) => {

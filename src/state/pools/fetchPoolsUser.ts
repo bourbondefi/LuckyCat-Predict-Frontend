@@ -37,7 +37,7 @@ export const fetchUserBalances = async (account) => {
     name: 'balanceOf',
     params: [account],
   }))
-  const tokenBalancesRaw = await multicall(erc20ABI, calls)
+  const tokenBalancesRaw = await multicallv2(erc20ABI, calls)
   const tokenBalances = tokens.reduce((acc, token, index) => ({ ...acc, [token]: tokenBalancesRaw[index] }), {})
   const poolTokenBalances = nonBnbPools.reduce(
     (acc, pool) => ({
@@ -65,7 +65,7 @@ export const fetchUserStakeBalances = async (account) => {
     name: 'getMyMiners',
     params: [account],
   }))
-  const userInfo = await multicall(sousChefABI, calls)
+  const userInfo = await multicallv2(sousChefABI, calls)
   return nonMasterPools.reduce(
     (acc, pool, index) => ({
       ...acc,

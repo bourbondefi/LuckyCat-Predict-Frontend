@@ -18,18 +18,12 @@ const sousStake = async (sousChefContract, amount, decimals = 18, ref) => {
 
 const sousStakeBnb = async (sousChefContract, amount, ref) => {
   const gasPrice = getGasPrice()
-  return sousChefContract.hatchEggs(ref, {
-    ...options,
-    gasPrice,
-  })
+  return sousChefContract.hatchEggs(ref, { ...options, gasPrice })
 }
 
-const sousStakeV2 = async (sousChefContract, amount, ref) => {
+const sousStakeV2 = async (sousChefContract) => {
   const gasPrice = getGasPrice()
-  return sousChefContract.hatchEggs({
-    ...options,
-    gasPrice,
-  })
+  return sousChefContract.hatchEggs({ ...options, gasPrice })
 }
 
 const useHatchPool = (sousId: number, isUsingBnb = false) => {
@@ -42,12 +36,15 @@ const useHatchPool = (sousId: number, isUsingBnb = false) => {
 
   const handleStake = useCallback(
     async (amount: string, decimals: number) => {
-      if (isUsingBnb) {
+      if (isUsingBnb && sousId !== 7) {
         return sousStakeBnb(sousChefContract, amount, ref)
+      }
+      if (isUsingBnb && sousId === 7) {
+        return sousStakeV2(sousChefContract)
       }
       return sousStake(sousChefContract, amount, decimals, ref)
     },
-    [isUsingBnb, ref, sousChefContract],
+    [isUsingBnb, ref, sousChefContract, sousId],
   )
 
   return { onStake: handleStake }
