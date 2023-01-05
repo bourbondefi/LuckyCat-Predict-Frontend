@@ -5,7 +5,7 @@ import { PageMeta } from './types'
 export const DEFAULT_META: PageMeta = {
   title: 'Lucky Cat',
   description: 'Lucky Cat has the highest rewards and lowest fees. Play Prediction to win BUSD!',
-  image: 'https://predict.luckycat.money/images/FullLogo.png',
+  image: 'https://luckycat.money/images/LuckyCatFullLogo.png',
 }
 
 interface PathList {
