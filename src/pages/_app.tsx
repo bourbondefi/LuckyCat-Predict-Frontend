@@ -57,7 +57,7 @@ function MyApp(props: AppProps) {
           content="Lucky Cat has the highest rewards and lowest fees."
         />
         <meta name="theme-color" content="#1FC7D4" />
-        <meta name="twitter:image" content="https://Luckycat.money/images/FullLogo.png" />
+        <meta name="twitter:image" content="https://Luckycat.money/images/LuckyCatFullLogo.png" />
         <meta
           name="twitter:description"
           content="Lucky Cat has the highest rewards and lowest fees."
