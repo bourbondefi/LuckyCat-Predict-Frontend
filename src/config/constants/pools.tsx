@@ -60,6 +60,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    rate: '3%',
   },
   {
     title: 'Ore Miner',
@@ -74,6 +75,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    rate: '8%',
   },
   {
     title: 'Lucky Cat',
@@ -88,6 +90,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    rate: '8%',
   },
   {
     title: 'LuckyCat',
@@ -102,6 +105,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    rate: '8%',
   },
   {
     title: 'Lucky Cat',
@@ -116,6 +120,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    rate: '8%',
   },
   {
     title: 'Bean Machine',
@@ -130,6 +135,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    rate: '8%',
   },
   {
     title: 'Trust Miner',
@@ -144,6 +150,39 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000003',
     version: 4,
     isStarted: true,
+    rate: '3%',
+  },
+  {
+    title: 'Lucky Cat Shib',
+    isFinished: true,
+    sousId: 9,
+    stakingToken: serializedTokens.shib,
+    earningToken: serializedTokens.shib,
+    contractAddress: {
+      97: '',
+      56: '0x6C83AF6DFFAB3204C485334E4b904679c87D5e84',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.000008',
+    version: 4,
+    isStarted: true,
+    rate: '8%',
+  },
+  {
+    title: 'Lucky Cat ETH',
+    isFinished: true,
+    sousId: 10,
+    stakingToken: serializedTokens.eth,
+    earningToken: serializedTokens.eth,
+    contractAddress: {
+      97: '',
+      56: '0xb3a6a7faBE117b83eEeF74110719be09949bBC78',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.000008',
+    version: 4,
+    isStarted: true,
+    rate: '8%',
   },
 ].filter((p) => !!p.contractAddress[CHAIN_ID])
 
@@ -163,6 +202,7 @@ const finishedPools = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    rate: '8%',
   },
   {
     title: 'Platinum BUSD',
@@ -178,36 +218,7 @@ const finishedPools = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
-  },
-  {
-    title: 'Lucky Cat Shib',
-    isFinished: true,
-    sousId: 9,
-    stakingToken: serializedTokens.shib,
-    earningToken: serializedTokens.shib,
-    contractAddress: {
-      97: '',
-      56: '0x6C83AF6DFFAB3204C485334E4b904679c87D5e84',
-    },
-    poolCategory: PoolCategory.CORE,
-    tokenPerBlock: '0.000008',
-    version: 4,
-    isStarted: true,
-  },
-  {
-    title: 'Lucky Cat ETH',
-    isFinished: true,
-    sousId: 10,
-    stakingToken: serializedTokens.eth,
-    earningToken: serializedTokens.eth,
-    contractAddress: {
-      97: '',
-      56: '0xb3a6a7faBE117b83eEeF74110719be09949bBC78',
-    },
-    poolCategory: PoolCategory.CORE,
-    tokenPerBlock: '0.000008',
-    version: 4,
-    isStarted: true,
+    rate: '8%',
   },
 ]
   .filter((p) => !!p.contractAddress[CHAIN_ID])
