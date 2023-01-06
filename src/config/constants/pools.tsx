@@ -154,7 +154,6 @@ const pools: SerializedPoolConfig[] = [
   },
   {
     title: 'Lucky Cat Shib',
-    isFinished: true,
     sousId: 9,
     stakingToken: serializedTokens.shib,
     earningToken: serializedTokens.shib,
@@ -170,7 +169,6 @@ const pools: SerializedPoolConfig[] = [
   },
   {
     title: 'Lucky Cat ETH',
-    isFinished: true,
     sousId: 10,
     stakingToken: serializedTokens.eth,
     earningToken: serializedTokens.eth,
