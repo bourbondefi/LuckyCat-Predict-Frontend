@@ -206,7 +206,7 @@ const Desktop: React.FC = () => {
       <StyledDesktop>
         <PowerLinkStyle>
           <Button width="100%" className="swiper-no-swiping" onClick={handleButtonClick}>
-            End Round
+            Start Game
           </Button>
         </PowerLinkStyle>
         <SplitWrapper ref={splitWrapperRef}>

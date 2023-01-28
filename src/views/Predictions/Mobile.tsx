@@ -77,9 +77,9 @@ const Mobile: React.FC = () => {
       <Box height="100%" overflow="hidden" position="relative">
         <View isVisible={view === PageView.POSITIONS}>
           <PowerLinkStyle>
-          <Button width="75%" className="mobile-button" onClick={handleButtonClick}>
-          End Round
-          </Button>
+            <Button width="75%" className="mobile-button" onClick={handleButtonClick}>
+              Start Game
+            </Button>
           </PowerLinkStyle>
           <Flex alignItems="center" height="100%">
             {status === PredictionStatus.ERROR && <ErrorNotification />}

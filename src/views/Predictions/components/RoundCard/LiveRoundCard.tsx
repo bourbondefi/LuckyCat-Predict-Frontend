@@ -86,7 +86,7 @@ const LiveRoundCard: React.FC<LiveRoundCardProps> = ({
         title={t('Live')}
         epoch={round.epoch}
       />
-      <RoundProgress variant="flat" scale="sm" lockTimestamp={lockTimestamp} closeTimestamp={closeTimestamp} />
+      <RoundProgress variant="flat" scale="sm" lockTimestamp={closeTimestamp - 300} closeTimestamp={closeTimestamp} />
       <CardBody p="16px">
         <MultiplierArrow
           betAmount={betAmount}

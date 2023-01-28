@@ -72,7 +72,7 @@ export default {
     97: '',
   },
   predictionsCAKE: {
-    56: '0x82f38a48e4C0560Bb39F9dAe98369271c08a3f96',
+    56: '0x08A267E29d86dd57F8C1e86c8D98f84AACc68E43',
     97: '',
   },
   chainlinkOracle: {
