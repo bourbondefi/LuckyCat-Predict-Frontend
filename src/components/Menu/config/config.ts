@@ -64,6 +64,11 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
     fillIcon: TrophyFillIcon,
     items: [
       {
+        label: t('Coin Flip'),
+        href: 'https://arbiflip.luckycat.money/',
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
+      {
         label: t('Prediction (BETA)'),
         href: '/prediction',
         image: '/images/decorations/prediction.png',
