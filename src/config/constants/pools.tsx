@@ -91,6 +91,7 @@ const pools: SerializedPoolConfig[] = [
     tokenPerBlock: '0.000008',
     version: 4,
     isStarted: true,
+    isFinished: true,
     rate: '8%',
   },
   {
