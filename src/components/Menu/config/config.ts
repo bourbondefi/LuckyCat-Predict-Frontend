@@ -33,6 +33,11 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
         label: t('Miners'),
         href: '/pools',
       },
+      {
+        label: t('Future Cats'),
+        href: 'https://futurecats.app/',
+        type: DropdownMenuItemType.EXTERNAL_LINK,
+      },
     ],
   },
   {
@@ -67,11 +72,6 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
         label: t('Coin Flip'),
         href: 'https://arbiflip.luckycat.money/',
         type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-      {
-        label: t('Prediction (BETA)'),
-        href: '/prediction',
-        image: '/images/decorations/prediction.png',
       },
     ],
   },
