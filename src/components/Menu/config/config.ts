@@ -62,19 +62,6 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
       },
     ],
   },
-  {
-    label: t('Win'),
-    href: '/prediction',
-    icon: TrophyIcon,
-    fillIcon: TrophyFillIcon,
-    items: [
-      {
-        label: t('Coin Flip'),
-        href: 'https://arbiflip.luckycat.money/',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
-    ],
-  },
 ]
 
 export default config
