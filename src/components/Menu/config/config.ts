@@ -33,11 +33,6 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
         label: t('Miners'),
         href: '/pools',
       },
-      {
-        label: t('Future Cats'),
-        href: 'https://futurecats.app/',
-        type: DropdownMenuItemType.EXTERNAL_LINK,
-      },
     ],
   },
   {
